@@ -14,10 +14,7 @@ export default function WeatherInfo(props) {
       <div className="row mt-3">
         <div className="col-6">
           <div className="d-flex align-items-center">
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-              alt="Mostly cloudy"
-            />
+            <img src={props.data.icon} alt={props.data.iconDescription} />
             <div className="ml-2">
               <span className="temperature">{props.data.temperature}</span>
               <span className="unit">ºC</span>
