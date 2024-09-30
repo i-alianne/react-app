@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import WeatherInfo from "./WeatherInfo";
 import WeatherForecast from "./WeatherForecast";
 import axios from "axios";
+import { ColorRing } from "react-loader-spinner";
 import "./Weather.css";
 
 export default function Weather(props) {
@@ -65,6 +66,18 @@ export default function Weather(props) {
     );
   } else {
     search();
-    return "Loading..";
+    return (
+      <div className="loader-container">
+        <ColorRing
+          className="loader"
+          visible={true}
+          height="80"
+          width="80"
+          ariaLabel="color-ring-loading"
+          wrapperClass="color-ring-wrapper"
+          colors={["#e15b64", "#f47e60", "#f8b26a", "#abbd81", "#849b87"]}
+        />
+      </div>
+    );
   }
 }
